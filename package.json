@@ -1,0 +1,17 @@
+{
+  "name": "DibDmini-bot",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/MahbodHastam/DibDmini-bot",
+  "author": "MahbodHastam",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.2",
+    "nodemon": "^2.0.7"
+  }
+}
