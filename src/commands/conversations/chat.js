@@ -28,8 +28,8 @@ module.exports = [
     execute(message, args) {
       const req = args[0];
       if (req === 'ممبرا' || req === 'ممبر') {
-        console.log(message.channel.members.array().length);
-        const count = message.channel.members.array().length;
+        // console.log(message.guild.memberCount);
+        const count = message.guild.memberCount;
         message.reply(`\n اینقد ممبر داریم: ${count}`);
       }
     }
