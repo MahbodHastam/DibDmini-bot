@@ -30,7 +30,7 @@ module.exports = [
       if (req === 'ممبرا' || req === 'ممبر') {
         console.log(message.channel.members.array().length);
         const count = message.channel.members.array().length;
-        message.reply(`\nاینقد تا: ${count}`);
+        message.reply(`\n اینقد ممبر داریم: ${count}`);
       }
     }
   }
