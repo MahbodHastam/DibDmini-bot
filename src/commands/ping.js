@@ -1,7 +1,7 @@
 module.exports = {
-  name: 'خوبی',
+  name: 'پینگ',
   description: 'خیخیخی',
   execute(message, args) {
-    message.reply(`چرا که نه :)`);
+    message.reply('همه‌چی امن و امانه');
   },
 };

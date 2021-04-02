@@ -19,7 +19,18 @@ module.exports = [
       if (req === 'رفتم') {
         message.reply(`بسلامت:/`);
       } else if (req === 'کیم؟' || req === 'کیم') {
-        message.reply(`\n${message.author.username} هستی بمولا`);
+        message.reply(`\n\`${message.author.username}\`\n هستی بمولا`);
+      }
+    }
+  }, {
+    name: ['تعداد', 'چنتا'],
+    description: 'تعداد چیزایی که میخایو میگه:/',
+    execute(message, args) {
+      const req = args[0];
+      if (req === 'ممبرا' || req === 'ممبر') {
+        console.log(message.channel.members.array().length);
+        const count = message.channel.members.array().length;
+        message.reply(`\nاینقد تا: ${count}`);
       }
     }
   }

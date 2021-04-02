@@ -28,7 +28,13 @@ for (const file of commandFiles) {
 for (const file of conversationFiles) {
   const command = require(`./commands/conversations/${file}`);
   command.forEach(commandObject => {
-    client.commands.set(commandObject.name, commandObject);
+    if (typeof commandObject.name === 'string') {
+      client.commands.set(commandObject.name, commandObject);
+    } else if (typeof commandObject.name === 'object') {
+      commandObject.name.forEach(name => {
+        client.commands.set(name, commandObject);
+      });
+    }
   });
 }
 
