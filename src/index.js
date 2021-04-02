@@ -9,7 +9,7 @@ const commandFiles = fs
   .filter(file => file.endsWith('js'));
 const conversationFiles = fs
   .readdirSync(`./${SRC_DIR}commands/conversations`)
-  .filter(file => file.endsWith('js'))
+  .filter(file => file.endsWith('js'));
 let args;
 
 client.on('ready', () => {
