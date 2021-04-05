@@ -1,7 +1,6 @@
 const fs = require('fs');
 
 module.exports.checkBayad = (message, args) => {
-  console.log(message, args);
   const data = fs.readFileSync(`${dataDir}/guilds/${message.guild.id}/bayads.txt`, { encoding: 'utf-8' });
   const lines = data.split(/\r?\n/);
 
@@ -21,4 +20,6 @@ module.exports.checkDirectories = () => {
   if (!fs.existsSync(`${dataDir}/guilds`)) {
     fs.mkdir(`${dataDir}/guilds`);
   }
+
+  return;
 };
