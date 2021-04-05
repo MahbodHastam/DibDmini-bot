@@ -1,8 +1,15 @@
 const { PREFIX, BOT_TOKEN, SRC_DIR } = require('./config');
 const Discord = require('discord.js');
 const client = new Discord.Client();
-client.login(BOT_TOKEN);
 const fs = require('fs');
+const utils = require('./utils');
+
+global.rootDir = require('path').resolve(__dirname + '/../');
+global.dataDir = `${rootDir}/data`;
+
+utils.checkDirectories();
+
+client.login(BOT_TOKEN);
 client.commands = new Discord.Collection();
 const commandFiles = fs
   .readdirSync(`./${SRC_DIR}commands`)
@@ -39,12 +46,15 @@ for (const file of conversationFiles) {
 }
 
 client.on('message', message => {
+  args = message.content.slice(PREFIX.length).trim().split(/ +/);
+
+  utils.checkBayad(message, args);
+
   if (message.content === PREFIX) {
     message.reply(`بلی`);
   }
   if (!message.content.startsWith(PREFIX) || message.author.bot) return;
 
-  args = message.content.slice(PREFIX.length).trim().split(/ +/);
   const command = args.shift().toLowerCase();
 
   if (!client.commands.has(command)) return;
@@ -53,6 +63,6 @@ client.on('message', message => {
     client.commands.get(command).execute(message, args);
   } catch (error) {
     console.error(error);
-    message.reply(`Server error! Please tell the developer.`);
+    message.reply(`فک کنم کِرم زدم، به \`Mahbod#1890\` بگین:/`);
   }
 });

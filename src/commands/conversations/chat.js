@@ -7,7 +7,8 @@ module.exports = [
       const req = args[0];
       if (req === 'برم') {
         const msgs = ['به مار راستم', 'بابای'];
-        message.reply(msgs[Math.random()]);
+        const randomNumber = parseInt(Math.random() * 2);
+        message.reply(msgs[randomNumber] ?? `بای`);
       }
     }
   }, {
@@ -30,7 +31,7 @@ module.exports = [
       if (req === 'ممبرا' || req === 'ممبر') {
         // console.log(message.guild.memberCount);
         const count = message.guild.memberCount;
-        message.reply(`\n اینقد ممبر داریم: ${count}`);
+        message.reply(`\n اینقد ممبر داریم: ${count} ( با خودم البته:) )`);
       }
     }
   }
