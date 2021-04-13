@@ -1,4 +1,4 @@
-FROM node:15.11.0
+FROM node:alpine
 
 WORKDIR /app
 
@@ -8,6 +8,5 @@ RUN npm install
 
 COPY . .
 
-RUN bash run.sh
 
 CMD ["npm", "run", "dev"]
