@@ -8,4 +8,6 @@ RUN npm install
 
 COPY . .
 
+RUN bash run.sh
+
 CMD ["npm", "run", "dev"]
