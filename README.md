@@ -3,6 +3,6 @@
 > Don't use it now, thanks 😐
 
 ## Todos
-- [ ] Give "DibDmini" as a point to members
 - [ ] Sing in voice channel 🕶️
+- [ ] Give "DibDmini" as a point to members
 - [ ] **جر و بحث** (خیلی مهم 😂)
